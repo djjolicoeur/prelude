@@ -15,7 +15,12 @@
 
 (setq cider-repl-history-file "~/.emacs.d/nrepl-history")
 
-;(global-set-key "\C-cm" 'magit-status)
+(setq cider-cljs-lein-repl "(do (use 'figwheel-sidecar.repl-api) (start-figwheel!) (cljs-repl))")
+
+                                        ;(global-set-key "\C-cm" 'magit-status)
+;;sayid debugger
+(eval-after-load 'clojure-mode
+     '(sayid-setup-package "\C-d"))
 
 (add-hook 'after-init-hook 'global-company-mode)
 
@@ -36,6 +41,8 @@
 
 (setq auto-mode-alist
       (cons '("\\.yfl$" . clojure-mode) auto-mode-alist))
+
+;; HASKELL
 
 
 
